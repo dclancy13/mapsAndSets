@@ -1,0 +1,23 @@
+function hasDuplicate(arr) {
+    let compare = new Set([...arr]);
+    let newArr = [...compare];
+    return newArr.length === arr.length ? true : false;
+};
+
+function vowelCount(str) {
+    let vowels = 'aeiou';
+    let vowelMap = new Map();
+    for (let char of str) {
+        let lowerCase = char.toLowerCase();
+        if (vowels.includes(lowerCase)) {
+            console.log(lowerCase);
+            if (vowelMap.has(lowerCase)) {
+                vowelMap.set(lowerCase, vowelMap.get(lowerCase) + 1);
+            } else {
+                vowelMap.set(lowerCase, 1);
+            }
+        }
+    }
+    return vowelMap;
+
+};
